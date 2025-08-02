@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 
-// Get any user's public profile by ID
+
 export const getUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.params.userId).select("-password");
@@ -11,7 +11,7 @@ export const getUserProfile = async (req, res) => {
   }
 };
 
-// Get logged-in user's profile
+
 export const getMyProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");

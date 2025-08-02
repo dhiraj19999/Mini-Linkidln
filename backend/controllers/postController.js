@@ -13,11 +13,11 @@ export const createPost = async (req, res) => {
   }
 };
 
-// Get all posts (public feed)
+
 export const getAllPosts = async (req, res) => {
   try {
     const posts = await Post.find()
-      .populate("author", "name email")  // fetch name and email of author
+      .populate("author", "name email")  
       .sort({ createdAt: -1 });
 
     res.json(posts);
@@ -26,7 +26,7 @@ export const getAllPosts = async (req, res) => {
   }
 };
 
-// Get posts by a specific user
+
 export const getUserPosts = async (req, res) => {
   try {
     const userId = req.params.userId;
