@@ -1,10 +1,11 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/api", // Adjust your backend URL here
+  baseURL: "https://mini-linkidln-1.onrender.com/api", // Production URL
+  //baseURL: "http://localhost:5000/api", // Local development
 });
 
-// Add token automatically if exists
+
 instance.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) {
